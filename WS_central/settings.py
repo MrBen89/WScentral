@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'api',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRONJOBS = [
+        ('*/5 * * * *', 'api.cron.my_scheduled_job'),
+        # Example: running a management command daily at 4 AM
+        #('0 4 * * *', 'django.core.management.call_command', ['clearsessions']),
+    ]
