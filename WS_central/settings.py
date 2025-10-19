@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'api',
+    # 'api.apps.ApiConfig',
     'django_crontab',
 ]
 
